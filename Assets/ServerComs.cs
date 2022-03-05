@@ -77,14 +77,17 @@ public class ServerComs : MonoBehaviour
     {
         if (!WebSocketServerEnabled) { return; }
 
-        // Check if server send new messages
-        var cqueue = client.receiveQueue;
-        string msg;
-        while (cqueue.TryPeek(out msg))
+        if (client != null)
         {
-            // Parse newly received messages
-            cqueue.TryDequeue(out msg);
-            HandleMessage(msg);
+            // Check if server send new messages
+            var cqueue = client.receiveQueue;
+            string msg;
+            while (cqueue.TryPeek(out msg))
+            {
+                // Parse newly received messages
+                cqueue.TryDequeue(out msg);
+                HandleMessage(msg);
+            }
         }
 
         if (Time.time * 1000 > lastTelemTime + telemIntervalMs)
@@ -106,7 +109,7 @@ public class ServerComs : MonoBehaviour
         msg.source = "sim";
         msg.state = "autonmous"; // TODO: add manual vs autonmous
         
-        msg.camera = System.Text.Encoding.UTF8.GetString(GetScreenshot());
+        msg.camera = GetScreenshot();
         // TODO: Depth map
 
         msg.pos_x = robot.position.x;
@@ -172,11 +175,8 @@ public class ServerComs : MonoBehaviour
 
 
     // Take a "screenshot" of a camera's Render Texture.
-    private byte[] GetScreenshot()
+    private string GetScreenshot()
     {
-        Camera Cam = GameObject.Find("Car Cam").GetComponent<Camera>();
-        Debug.Log(Cam);
-
         // The Render Texture in RenderTexture.active is the one that will be read by ReadPixels.
         RenderTexture currentRT = RenderTexture.active;
         RenderTexture.active = camera.targetTexture; // TODO: Get Depth here?
@@ -185,13 +185,12 @@ public class ServerComs : MonoBehaviour
         camera.Render();
 
         // Make a new texture and read the active Render Texture into it.
-        Debug.Log(camera);  
         Texture2D image = new Texture2D(camera.targetTexture.width, camera.targetTexture.height);
         image.ReadPixels(new Rect(0, 0, camera.targetTexture.width, camera.targetTexture.height), 0, 0);
         image.Apply();
 
         // Replace the original active Render Texture.
         RenderTexture.active = currentRT;
-        return image.EncodeToJPG();
+        return Convert.ToBase64String(image.EncodeToPNG());
     }
 }
