@@ -19,6 +19,7 @@ public class ServerComs : MonoBehaviour
     public Rigidbody rb;
     public Camera camera;
     private TelemetryModel msg = new TelemetryModel();
+    public ImageSynthesis imageSynthesis;
 
     public bool WebSocketServerEnabled;
     public bool DebugLogEnabled;
@@ -37,14 +38,15 @@ public class ServerComs : MonoBehaviour
 
     private void Awake()
     {
-        if (!WebSocketServerEnabled)
-            return;
-
         robot = GameObject.Find("Car").GetComponent<Transform>();
         camera = GameObject.Find("Car Cam").GetComponent<Camera>();
+        imageSynthesis = GameObject.Find("Depth Cam").GetComponent<ImageSynthesis>();
         rb = robot.GetComponent<Rigidbody>();
 
         server = "ws://" + host + ":" + port;
+
+        if (!WebSocketServerEnabled)
+            return;
         if (DebugLogEnabled)
             Debug.Log("using websocket setver " + server);
         if (client == null)
@@ -75,6 +77,9 @@ public class ServerComs : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // imageSynthesis.OnSceneChange();
+        imageSynthesis.Save("test");
+
         if (!WebSocketServerEnabled) { return; }
 
         if (client != null)
@@ -187,7 +192,7 @@ public class ServerComs : MonoBehaviour
         // Make a new texture and read the active Render Texture into it.
         Texture2D image = new Texture2D(camera.targetTexture.width, camera.targetTexture.height);
         image.ReadPixels(new Rect(0, 0, camera.targetTexture.width, camera.targetTexture.height), 0, 0);
-        image.Apply();
+        image.Apply(); 
 
         // Replace the original active Render Texture.
         RenderTexture.active = currentRT;

@@ -1,0 +1,3 @@
+[submodule "Assets/ml-imagesynthesis"]
+	path = Assets/ml-imagesynthesis
+	url = https://bitbucket.org/Unity-Technologies/ml-imagesynthesis.git

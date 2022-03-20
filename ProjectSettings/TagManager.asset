@@ -3,14 +3,27 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - HelpObject
+  - Lane Line
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Lane Line
   - Water
   - UI
+  - Road
+  - Not Driveable
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - tagInvisibleToZED
   - 
   - 
   - 
@@ -24,18 +37,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - arlayer
   - 
   m_SortingLayers:
   - name: Default
