@@ -40,7 +40,7 @@ public class ServerComs : MonoBehaviour
     {
         robot = GameObject.Find("Car").GetComponent<Transform>();
         camera = GameObject.Find("Car Cam").GetComponent<Camera>();
-        imageSynthesis = GameObject.Find("Depth Cam").GetComponent<ImageSynthesis>();
+        imageSynthesis = GameObject.Find("BEV Cam").GetComponent<ImageSynthesis>();
         rb = robot.GetComponent<Rigidbody>();
 
         server = "ws://" + host + ":" + port;
