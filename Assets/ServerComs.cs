@@ -40,7 +40,8 @@ public class ServerComs : MonoBehaviour
     {
         robot = GameObject.Find("Car").GetComponent<Transform>();
         camera = GameObject.Find("Car Cam").GetComponent<Camera>();
-        imageSynthesis = GameObject.Find("BEV Cam").GetComponent<ImageSynthesis>();
+        imageSynthesis = GameObject.Find("Depth Cam").GetComponent<ImageSynthesis>();
+
         rb = robot.GetComponent<Rigidbody>();
 
         server = "ws://" + host + ":" + port;
@@ -78,7 +79,7 @@ public class ServerComs : MonoBehaviour
     void Update()
     {
         // imageSynthesis.OnSceneChange();
-        imageSynthesis.Save("test");
+        imageSynthesis.Save("test_front");
 
         if (!WebSocketServerEnabled) { return; }
 
