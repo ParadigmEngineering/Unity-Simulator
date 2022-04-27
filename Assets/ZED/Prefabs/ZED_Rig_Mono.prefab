@@ -43,15 +43,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75b2a3ff7b847ca4490808f4c0432cd4, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   cameraID: 0
   depthMode: 1
   inputType: 0
   resolution: 2
   FPS: 60
   svoInputFileName: Assets/Recording.svo
-  opencvCalibFile:
+  opencvCalibFile: 
   svoLoopBack: 1
   svoRealTimeMode: 0
   currentFrame: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
   streamInputPort: 30000
   enableTracking: 1
   enableSpatialMemory: 1
-  pathSpatialMemory:
+  pathSpatialMemory: 
   estimateInitialPosition: 0
   trackingIsStatic: 0
   mappingResolutionPreset: 1
@@ -77,8 +77,10 @@ MonoBehaviour:
   objectDetectionTracking: 1
   objectDetection2DMask: 0
   objectDetectionModel: 1
-  bodyFitting: 0
-  maxRange: 40
+  objectDetectionBodyFitting: 1
+  objectDetectionMaxRange: 40
+  objectDetectionFilteringMode: 1
+  objectDetectionBodyFormat: 1
   bodyFormat: 1
   SK_personDetectionConfidenceThreshold: 50
   OD_personDetectionConfidenceThreshold: 60
@@ -171,8 +173,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c602d2dc840f0144911c39c566846cb, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1215292335019620
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +235,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 851b6eeee88b1e04c8a22454a27421a1, type: 2}
+  - {fileID: 2100000, guid: 27e47bd369171664d8041076064c4862, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -265,8 +267,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 313514277d565454383ea4c1a1f8beb9, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   showInNonZEDCameras: 0
 --- !u!1 &1795562263255876
 GameObject:
@@ -354,8 +356,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e14eefa25813a3489cc8b38d2027ac8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   canvas: {fileID: 1215292335019620}
   viewSide: 0
   viewMode: 0

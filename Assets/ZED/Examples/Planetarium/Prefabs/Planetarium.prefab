@@ -6365,6 +6365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdf840b984b0d6343955347d816339a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zedManager: {fileID: 0}
 --- !u!1 &1381048154563754
 GameObject:
   m_ObjectHideFlags: 0
@@ -14412,7 +14413,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 60c6c6a9ecf81814096a4fe8af2cc3c1, type: 2}
+  - {fileID: 2100000, guid: b8ccaac990b85c54d996b489dccb2e39, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

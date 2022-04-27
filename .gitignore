@@ -87,3 +87,5 @@ crashlytics-build.properties
 
 # Big texture files
 /[Aa]ssets/TerrainTexturesPackFree/*
+/[Aa]ssets/Dactilardesign/*
+

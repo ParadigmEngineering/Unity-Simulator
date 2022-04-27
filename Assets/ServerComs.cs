@@ -19,7 +19,7 @@ public class ServerComs : MonoBehaviour
     public Rigidbody rb;
     public Camera camera;
     private TelemetryModel msg = new TelemetryModel();
-    public ImageSynthesis imageSynthesis;
+    //public ImageSynthesis imageSynthesis;
 
     public bool WebSocketServerEnabled;
     public bool DebugLogEnabled;
@@ -40,7 +40,7 @@ public class ServerComs : MonoBehaviour
     {
         robot = GameObject.Find("Car").GetComponent<Transform>();
         camera = GameObject.Find("Car Cam").GetComponent<Camera>();
-        imageSynthesis = GameObject.Find("Depth Cam").GetComponent<ImageSynthesis>();
+        //imageSynthesis = GameObject.Find("Depth Cam").GetComponent<ImageSynthesis>();
 
         rb = robot.GetComponent<Rigidbody>();
 
@@ -79,7 +79,7 @@ public class ServerComs : MonoBehaviour
     void Update()
     {
         // imageSynthesis.OnSceneChange();
-        imageSynthesis.Save("test_front");
+        //imageSynthesis.Save("test_front");
 
         if (!WebSocketServerEnabled) { return; }
 
