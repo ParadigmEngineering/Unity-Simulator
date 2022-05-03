@@ -88,4 +88,6 @@ crashlytics-build.properties
 # Big texture files
 /[Aa]ssets/TerrainTexturesPackFree/*
 /[Aa]ssets/Dactilardesign/*
+/[Aa]ssets/VintProg_BarriersAndBarricades_HDRP/*
+
 
